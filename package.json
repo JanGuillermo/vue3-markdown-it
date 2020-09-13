@@ -18,7 +18,8 @@
     "test": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "markdown-it": "^11.0.0"
+    "markdown-it": "^11.0.0",
+    "markdown-it-abbr": "^1.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.6",
@@ -29,6 +30,7 @@
     "@vue/test-utils": "^2.0.0-0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
+    "dedent-js": "^1.0.1",
     "eslint": "^7.9.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",

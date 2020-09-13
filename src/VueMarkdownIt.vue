@@ -4,6 +4,7 @@
 
 <script>
 import MarkdownIt from 'markdown-it';
+import MarkdownItAbbr from 'markdown-it-abbr';
 
 export default {
   name: 'vue-markdown-it',
@@ -51,6 +52,8 @@ export default {
   methods: {
     initializeMarkdown() {
       this.md = new MarkdownIt();
+
+      this.md.use(MarkdownItAbbr);
 
       this.md.set({
         breaks: this.breaks,
