@@ -1,6 +1,6 @@
 {
   "name": "@theonlyjan/vue-markdown-it",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jan Guillermo",
   "description": "A Vue markdown-it wrapper plugin",
   "license": "MIT",
