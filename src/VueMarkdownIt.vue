@@ -98,3 +98,7 @@ export default {
   }
 };
 </script>
+
+<style>
+@import 'markdown-it-latex/dist/index.css';
+</style>
