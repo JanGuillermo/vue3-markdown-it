@@ -7,6 +7,7 @@ import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
+import MarkdownItFootnote from 'markdown-it-footnote';
 
 export default {
   name: 'vue-markdown-it',
@@ -55,7 +56,10 @@ export default {
     initializeMarkdown() {
       this.md = new MarkdownIt();
 
-      this.md.use(MarkdownItAbbr).use(MarkdownItDeflist);
+      this.md
+        .use(MarkdownItAbbr)
+        .use(MarkdownItDeflist)
+        .use(MarkdownItFootnote);
 
       this.md.set({
         breaks: this.breaks,

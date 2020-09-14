@@ -2,13 +2,14 @@ import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
+import MarkdownItFootnote from 'markdown-it-footnote';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
 const md = new MarkdownIt();
 const render = (source) => md.render(dedent(source));
 
-md.use(MarkdownItAbbr).use(MarkdownItDeflist);
+md.use(MarkdownItAbbr).use(MarkdownItDeflist).use(MarkdownItFootnote);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -73,5 +74,26 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('</dl>');
     expect(wrapper.html()).toContain('</dt>');
     expect(wrapper.html()).toContain('</dd>');
+  });
+
+  it('should be able to support footnotes', async () => {
+    source = `
+      Here is a footnote reference,[^1] and another.[^longnote]
+
+      [^1]: Here is the footnote.
+      
+      [^longnote]: Here's one with multiple blocks.
+      
+          Subsequent paragraphs are indented to show that they
+      belong to the previous footnote.
+    `;
+    const result = render(source);
+
+    console.log(result);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('footnote-ref');
+    expect(wrapper.html()).toContain('footnote-backref');
   });
 });
