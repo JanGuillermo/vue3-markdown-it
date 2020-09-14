@@ -6,6 +6,7 @@ import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
+import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
@@ -21,6 +22,7 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItFootnote)
   .use(MarkdownItIns)
   .use(MarkdownItLatex)
+  .use(MarkdownItMark)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
   .use(MarkdownItTasklists);
@@ -140,6 +142,16 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('katex');
+  });
+
+  // Tests markdown-it-mark
+  it('should be able to support <mark> tags', async () => {
+    source = '==marked==';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</mark>');
   });
 
   // Tests markdown-it-sub

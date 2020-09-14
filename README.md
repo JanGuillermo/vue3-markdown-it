@@ -21,6 +21,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins)
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex)
+- [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
 - [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists)
