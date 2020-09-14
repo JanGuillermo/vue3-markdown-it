@@ -4,6 +4,7 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
+import MarkdownItFontAwesome from 'markdown-it-fontawesome';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
@@ -23,6 +24,7 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItAnchor)
   .use(MarkdownItDeflist)
   .use(MarkdownItEmoji)
+  .use(MarkdownItFontAwesome)
   .use(MarkdownItFootnote)
   .use(MarkdownItIns)
   .use(MarkdownItLatex)
@@ -121,6 +123,16 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.text()).toEqual('🎉');
+  });
+
+  // Tests markdown-it-fontawesome
+  it('should be able to support Font Awesome icons', async () => {
+    source = ':fa-flag:';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('fa fa-flag');
   });
 
   // Tests markdown-it-footnote

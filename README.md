@@ -19,6 +19,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) - Add anchors
 - [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist) - Add definition lists
 - [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) - Add emojis
+- [markdown-it-fontawesome](https://github.com/nunof07/markdown-it-fontawesome) - Add support for Font Awesome icons
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
