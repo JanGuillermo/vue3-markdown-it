@@ -6,7 +6,7 @@
 
 [![Build Status](https://travis-ci.com/JanGuillermo/vue-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue-markdown-it)
 
-A Vue [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
+> A Vue [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
 
 ## Installation
 ```
@@ -58,16 +58,57 @@ export default {
 ```
 
 ## Props
+The following properties are supported:
+
+### `breaks`
+> Convert `\n` in paragraphs into `<br>`.
+
+Type: `Boolean` | Default value: `false`
+
+### `html`
+> Enable HTML tags in source.
+
+Type: `Boolean` | Default value: `false`
+
+### `langPrefix`
+> CSS language prefix for fenced blocks. Can be useful for external highlighters.
+
+Type: `String` | Default value: `language-`
+
+### `quotes`
+> Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).
+
+Type: `String | String[]` | Default value: `“”‘’`
+
+### `source`
+> Content to be rendered into markdown.
+
+Type: `String` | Default value: `null`
+
+### `tasklists`
+There are three available options. View [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) for more information.
+
+| `tasklists` props | Description |
+| :---------------: | ----------- |
+| `enabled`         | The rendered checkboxes are automatically disabled. Pass `true` to allow the checks. |
+| `label`           | Wrap the rendered list items in a `<label>` element. |
+| `labelAfter`      | Wrap the text in a `<label>` element after the checkbox. *requires `label` to be true*. |
+
+Type: `Object` | Default value: `null`
+
+### `typographer`
+> Enable some language-neutral replacement + quotes beautification.
+
+Type: `Boolean` | Default value: `false`
+
+### `xhtmlOut`
+> Use `/` to close single tags (`<br />`).
+
+Type: `Boolean` | Default value: `false`
+
 | Prop        | Description | Default Value |
 | :---------: | ----------- | :-----------: |
-| breaks      | Convert `\n` in paragraphs into `<br>` | *false* |
-| html        | Enable HTML tags in source | *false* |
-| langPrefix  | CSS language prefix for fenced blocks. Can be useful for external highlighters. | `language-` |
-| quotes      | Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp). | `“”‘’` |
-| source      | Content to be rendered into Markdown | |
 | tasklists   | Available options: *enabled*, *label*, & *labelAfter*. View [here](https://github.com/revin/markdown-it-task-lists) for more information. | {} |
-| typographer | Enable some language-neutral replacement + quotes beautification | *false* |
-| xhtmlOut    | Use `/` to close single tags (`<br />`) | *false* |
 
 ## License
 [MIT](https://github.com/JanGuillermo/vue-markdown-it/blob/master/LICENSE)
