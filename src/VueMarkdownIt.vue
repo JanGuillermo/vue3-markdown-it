@@ -9,6 +9,7 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
@@ -73,6 +74,7 @@ export default {
         .use(MarkdownItDeflist)
         .use(MarkdownItEmoji)
         .use(MarkdownItFootnote)
+        .use(MarkdownItIns)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
         .use(MarkdownItTasklists, this.tasklists);

@@ -4,6 +4,7 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
@@ -17,6 +18,7 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItDeflist)
   .use(MarkdownItEmoji)
   .use(MarkdownItFootnote)
+  .use(MarkdownItIns)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
   .use(MarkdownItTasklists);
@@ -142,5 +144,14 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.text()).toEqual('🎉');
+  });
+
+  it('should be able to support <insert> tags', async () => {
+    source = '++inserted++';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</ins>');
   });
 });
