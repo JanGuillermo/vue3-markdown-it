@@ -11,6 +11,7 @@ import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFontAwesome from 'markdown-it-fontawesome';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
@@ -33,6 +34,10 @@ export default {
       default: false
     },
     emoji: {
+      type: Object,
+      default: new Array()
+    },
+    highlight: {
       type: Object,
       default: new Array()
     },
@@ -91,6 +96,7 @@ export default {
         .use(MarkdownItEmoji, this.emoji)
         .use(MarkdownItFontAwesome)
         .use(MarkdownItFootnote)
+        .use(MarkdownItHighlightjs, this.highlight)
         .use(MarkdownItIns)
         .use(MarkdownItLatex)
         .use(MarkdownItMark)

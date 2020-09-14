@@ -21,6 +21,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) - Add emojis
 - [markdown-it-fontawesome](https://github.com/nunof07/markdown-it-fontawesome) - Add support for Font Awesome icons
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
+- [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) - Add highlighting for code blocks
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
@@ -80,6 +81,11 @@ Type: `Boolean` | Default value: `false`
 
 ### `emoji`
 > View [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) for more information.
+
+Type: `Object` | Default value: `null`
+
+### `highlight`
+> View [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) for more information.
 
 Type: `Object` | Default value: `null`
 

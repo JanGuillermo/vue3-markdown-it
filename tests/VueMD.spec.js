@@ -6,6 +6,7 @@ import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFontAwesome from 'markdown-it-fontawesome';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
@@ -26,6 +27,7 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItEmoji)
   .use(MarkdownItFontAwesome)
   .use(MarkdownItFootnote)
+  .use(MarkdownItHighlightjs)
   .use(MarkdownItIns)
   .use(MarkdownItLatex)
   .use(MarkdownItMark)
@@ -153,6 +155,22 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('footnote-ref');
     expect(wrapper.html()).toContain('footnote-backref');
+  });
+
+  // Tests markdown-it-highlightjs
+  it('should be able to support highlighting', async () => {
+    source = `
+      \`\`\`
+      this is code
+      \`\`\`
+
+      this isn't code
+    `;
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('hljs');
   });
 
   // Tests markdown-it-ins
