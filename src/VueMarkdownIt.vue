@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
@@ -68,7 +69,7 @@ export default {
       this.renderMarkdown();
     },
     renderMarkdown() {
-      this.$refs.md.innerHTML = this.md.render(this.source);
+      this.$refs.md.innerHTML = this.md.render(dedent(this.source));
     }
   }
 };

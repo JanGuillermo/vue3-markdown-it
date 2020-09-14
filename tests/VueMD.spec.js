@@ -6,6 +6,7 @@ import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
 const md = new MarkdownIt();
+const render = (source) => md.render(dedent(source));
 
 md.use(MarkdownItAbbr).use(MarkdownItDeflist);
 
@@ -13,7 +14,7 @@ describe('VueMarkdownIt unit tests', () => {
   let wrapper;
   let source;
 
-  beforeAll(() => {
+  beforeEach(() => {
     source = '# Hello World!';
     wrapper = mount(VueMarkdownIt, {
       props: {
@@ -31,14 +32,14 @@ describe('VueMarkdownIt unit tests', () => {
   });
 
   it('should contain "<h1>Hello World!</h1>"', async () => {
-    const result = md.render(source);
+    const result = render(source);
 
     expect(wrapper.html()).toContain(result);
   });
 
   it('should update with "<h2>Hello World!</h2>"', async () => {
     source = '## Hello World!';
-    const result = md.render(source);
+    const result = render(source);
 
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
@@ -49,11 +50,11 @@ describe('VueMarkdownIt unit tests', () => {
       *[D4C]: Dirty Deeds Done Dirt Cheap
       D4C is such a bizarre stand.
     `;
-    source = dedent(source);
-    const result = md.render(source);
+    const result = render(source);
 
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</abbr>');
   });
 
   it('should be able to support definition lists', async () => {
@@ -65,10 +66,12 @@ describe('VueMarkdownIt unit tests', () => {
       : This is one definition of the second term.
       : This is another definition of the second term.
     `;
-    source = dedent(source);
-    const result = md.render(source);
+    const result = render(source);
 
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</dl>');
+    expect(wrapper.html()).toContain('</dt>');
+    expect(wrapper.html()).toContain('</dd>');
   });
 });
