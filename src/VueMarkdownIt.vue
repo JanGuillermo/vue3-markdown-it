@@ -7,12 +7,11 @@ import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
+import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
-
-const DEFAULT_OPTIONS_TASKLISTS = null;
 
 export default {
   name: 'vue-markdown-it',
@@ -20,6 +19,10 @@ export default {
     breaks: {
       type: Boolean,
       default: false
+    },
+    emoji: {
+      type: Object,
+      default: new Array()
     },
     html: {
       type: Boolean,
@@ -39,7 +42,7 @@ export default {
     },
     tasklists: {
       type: Object,
-      default: DEFAULT_OPTIONS_TASKLISTS
+      default: new Array()
     },
     typographer: {
       type: Boolean,
@@ -68,6 +71,7 @@ export default {
       this.md
         .use(MarkdownItAbbr)
         .use(MarkdownItDeflist)
+        .use(MarkdownItEmoji)
         .use(MarkdownItFootnote)
         .use(MarkdownItSub)
         .use(MarkdownItSup)

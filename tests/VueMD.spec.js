@@ -2,6 +2,7 @@ import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
+import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
@@ -14,6 +15,7 @@ const render = (source) => md.render(dedent(source));
 
 md.use(MarkdownItAbbr)
   .use(MarkdownItDeflist)
+  .use(MarkdownItEmoji)
   .use(MarkdownItFootnote)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
@@ -131,5 +133,14 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('checkbox');
+  });
+
+  it('should be able to support emojis', async () => {
+    source = ':tada:';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.text()).toEqual('🎉');
   });
 });

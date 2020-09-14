@@ -17,6 +17,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it](https://github.com/markdown-it/markdown-it)
 - [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
 - [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
+- [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji)
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
@@ -64,6 +65,17 @@ The following properties are supported:
 > Convert `\n` in paragraphs into `<br>`.
 
 Type: `Boolean` | Default value: `false`
+
+### `emoji`
+There are three available options. View [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) for more information.
+
+| `emoji` props | Description |
+| :-----------: | ----------- |
+| `defs`        | Rewrite available emoji definitions |
+| `enabled`     | Enable only specific emojis |
+| `shortcuts`   | Rewrite emoji shortcuts |
+
+Type: `Object` | Default value: `null`
 
 ### `html`
 > Enable HTML tags in source.
