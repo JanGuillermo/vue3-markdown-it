@@ -16,6 +16,7 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
+import MarkdownItTOC from 'markdown-it-toc-done-right';
 import 'markdown-it-latex/dist/index.css';
 
 export default {
@@ -50,6 +51,10 @@ export default {
       default: ''
     },
     tasklists: {
+      type: Object,
+      default: new Array()
+    },
+    toc: {
       type: Object,
       default: new Array()
     },
@@ -88,7 +93,8 @@ export default {
         .use(MarkdownItMark)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
-        .use(MarkdownItTasklists, this.tasklists);
+        .use(MarkdownItTasklists, this.tasklists)
+        .use(MarkdownItTOC, this.toc);
 
       this.md.set({
         breaks: this.breaks,

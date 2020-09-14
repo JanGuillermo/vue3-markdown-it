@@ -11,6 +11,7 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
+import MarkdownItTOC from 'markdown-it-toc-done-right';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
@@ -27,7 +28,8 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItMark)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
-  .use(MarkdownItTasklists);
+  .use(MarkdownItTasklists)
+  .use(MarkdownItTOC);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -200,5 +202,25 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('checkbox');
+  });
+
+  // Tests markdown-it-toc-done-right
+  it('should be able to support table of contents', async () => {
+    source = `
+      [[toc]]
+
+      # First heading
+      Swag
+
+      ## Second heading
+      Awesome sauce!
+    `;
+    const result = render(source);
+
+    console.log(result);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('table-of-contents');
   });
 });

@@ -26,6 +26,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
 - [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists)
+- [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right)
 
 ## Usage
 ### Global Use
@@ -102,6 +103,11 @@ Type: `String` | Default value: `null`
 
 ### `tasklists`
 > View [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) for more information.
+
+Type: `Object` | Default value: `null`
+
+### `toc`
+> View [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right) for more information.
 
 Type: `Object` | Default value: `null`
 
