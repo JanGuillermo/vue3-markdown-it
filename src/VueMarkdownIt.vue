@@ -80,13 +80,13 @@ export default {
     };
   },
   mounted() {
-    this.initializeMarkdown();
+    this.renderMarkdown();
   },
   updated() {
     this.renderMarkdown();
   },
   methods: {
-    initializeMarkdown() {
+    renderMarkdown() {
       this.md = new MarkdownIt();
 
       this.md
@@ -115,9 +115,6 @@ export default {
         xhtmlOut: this.xhtmlOut
       });
 
-      this.renderMarkdown();
-    },
-    renderMarkdown() {
       this.$refs.md.innerHTML = this.md.render(dedent(this.source));
     }
   }
