@@ -11,9 +11,9 @@
     "markdown",
     "markdown-it"
   ],
-  "main": "src/index.js",
+  "main": "lib/vue-markdown-it.common.js",
   "scripts": {
-    "build": "vue-cli-service build --target lib ./src/index.js",
+    "build": "vue-cli-service build --dest lib --target lib --inline-vue ./src/index.js && rm ./lib/demo.html",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },
