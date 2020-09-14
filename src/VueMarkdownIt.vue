@@ -27,7 +27,7 @@ export default {
   props: {
     anchor: {
       type: Object,
-      default: new Array()
+      default: new Object()
     },
     breaks: {
       type: Boolean,
@@ -35,11 +35,11 @@ export default {
     },
     emoji: {
       type: Object,
-      default: new Array()
+      default: new Object()
     },
     highlight: {
       type: Object,
-      default: new Array()
+      default: new Object()
     },
     html: {
       type: Boolean,
@@ -59,11 +59,11 @@ export default {
     },
     tasklists: {
       type: Object,
-      default: new Array()
+      default: new Object()
     },
     toc: {
       type: Object,
-      default: new Array()
+      default: new Object()
     },
     typographer: {
       type: Boolean,
