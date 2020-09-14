@@ -4,6 +4,7 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItSub from 'markdown-it-sub';
+import MarkdownItSup from 'markdown-it-sup';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
@@ -13,7 +14,8 @@ const render = (source) => md.render(dedent(source));
 md.use(MarkdownItAbbr)
   .use(MarkdownItDeflist)
   .use(MarkdownItFootnote)
-  .use(MarkdownItSub);
+  .use(MarkdownItSub)
+  .use(MarkdownItSup);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -106,5 +108,14 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('</sub>');
+  });
+
+  it('should be able to support superscript', async () => {
+    source = '29^th^';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</sup>');
   });
 });

@@ -18,6 +18,8 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
 - [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
+- [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
+- [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
 
 ## Usage
 ### Global Use
