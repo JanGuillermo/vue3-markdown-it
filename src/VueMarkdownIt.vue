@@ -13,6 +13,7 @@ import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
+import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
@@ -91,6 +92,7 @@ export default {
         .use(MarkdownItIns)
         .use(MarkdownItLatex)
         .use(MarkdownItMark)
+        .use(MarkdownItStrikethroughAlt)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
         .use(MarkdownItTasklists, this.tasklists)
