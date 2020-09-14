@@ -19,7 +19,6 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
 - [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji)
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
-- [markdown-it-include](https://github.com/camelaissani/markdown-it-include)
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins)
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex)
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
@@ -79,11 +78,6 @@ Type: `Object` | Default value: `null`
 > Enable HTML tags in source.
 
 Type: `Boolean` | Default value: `false`
-
-### `include`
-> View [markdown-it-include](https://github.com/camelaissani/markdown-it-include) for more information.
-
-Type: `Object` | Default value: `null`
 
 ### `langPrefix`
 > CSS language prefix for fenced blocks. Can be useful for external highlighters.
