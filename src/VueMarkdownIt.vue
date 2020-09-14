@@ -99,6 +99,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import 'markdown-it-latex/dist/index.css';
 </style>
