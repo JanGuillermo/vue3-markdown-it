@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import 'markdown-it-latex/dist/index.css';
+
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
@@ -106,7 +108,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-@import 'markdown-it-latex/dist/index.css';
-</style>
