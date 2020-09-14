@@ -16,6 +16,7 @@ npm install @theonlyjan/vue-markdown-it
 ## Supported Plugins
 - [markdown-it](https://github.com/markdown-it/markdown-it)
 - [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
+- [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
 
 ## Usage
 ### Global Use

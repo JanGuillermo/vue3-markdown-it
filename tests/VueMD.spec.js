@@ -1,12 +1,13 @@
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItDeflist from 'markdown-it-deflist';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
 const md = new MarkdownIt();
 
-md.use(MarkdownItAbbr);
+md.use(MarkdownItAbbr).use(MarkdownItDeflist);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -47,6 +48,22 @@ describe('VueMarkdownIt unit tests', () => {
     source = `
       *[D4C]: Dirty Deeds Done Dirt Cheap
       D4C is such a bizarre stand.
+    `;
+    source = dedent(source);
+    const result = md.render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+  });
+
+  it('should be able to support definition lists', async () => {
+    source = `
+      First Term
+      : This is the definition of the first term.
+      
+      Second Term
+      : This is one definition of the second term.
+      : This is another definition of the second term.
     `;
     source = dedent(source);
     const result = md.render(source);
