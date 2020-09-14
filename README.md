@@ -41,6 +41,11 @@ const app = createApp();
 app.use(VueMarkdownIt);
 ```
 
+#### CSS
+```js
+import '@theonlyjan/vue-markdown-it/lib/vue-markdown-it.css';
+```
+
 ### Single Use
 ```vue
 <template>
