@@ -9,7 +9,6 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
-import MarkdownItFontAwesome from 'markdown-it-fontawesome';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
@@ -95,7 +94,6 @@ export default {
         .use(MarkdownItAnchor, this.anchor)
         .use(MarkdownItDeflist)
         .use(MarkdownItEmoji, this.emoji)
-        .use(MarkdownItFontAwesome)
         .use(MarkdownItFootnote)
         .use(MarkdownItHighlightjs, this.highlight)
         .use(MarkdownItIns)
