@@ -20,6 +20,7 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
+import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
 
 export default {
