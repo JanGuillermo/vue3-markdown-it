@@ -20,6 +20,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
+- [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists)
 
 ## Usage
 ### Global Use
@@ -64,6 +65,7 @@ export default {
 | langPrefix  | CSS language prefix for fenced blocks. Can be useful for external highlighters. | `language-` |
 | quotes      | Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp). | `“”‘’` |
 | source      | Content to be rendered into Markdown | |
+| tasklists   | Available options: *enabled*, *label*, & *labelAfter*. View [here](https://github.com/revin/markdown-it-task-lists) for more information. | {} |
 | typographer | Enable some language-neutral replacement + quotes beautification | *false* |
 | xhtmlOut    | Use `/` to close single tags (`<br />`) | *false* |
 

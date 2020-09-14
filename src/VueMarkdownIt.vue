@@ -10,6 +10,9 @@ import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
+import MarkdownItTasklists from 'markdown-it-task-lists';
+
+const DEFAULT_OPTIONS_TASKLISTS = null;
 
 export default {
   name: 'vue-markdown-it',
@@ -33,6 +36,10 @@ export default {
     source: {
       type: String,
       default: ''
+    },
+    tasklists: {
+      type: Object,
+      default: DEFAULT_OPTIONS_TASKLISTS
     },
     typographer: {
       type: Boolean,
@@ -63,7 +70,8 @@ export default {
         .use(MarkdownItDeflist)
         .use(MarkdownItFootnote)
         .use(MarkdownItSub)
-        .use(MarkdownItSup);
+        .use(MarkdownItSup)
+        .use(MarkdownItTasklists, this.tasklists);
 
       this.md.set({
         breaks: this.breaks,

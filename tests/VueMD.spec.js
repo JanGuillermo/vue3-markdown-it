@@ -5,6 +5,7 @@ import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
+import MarkdownItTasklists from 'markdown-it-task-lists';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
@@ -15,7 +16,8 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItDeflist)
   .use(MarkdownItFootnote)
   .use(MarkdownItSub)
-  .use(MarkdownItSup);
+  .use(MarkdownItSup)
+  .use(MarkdownItTasklists);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -117,5 +119,17 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('</sup>');
+  });
+
+  it('should be able to support task lists', async () => {
+    source = `
+      - [ ] unchecked
+      - [x] checked
+    `;
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('checkbox');
   });
 });
