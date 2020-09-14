@@ -58,6 +58,7 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain(result);
   });
 
+  // Tests markdown-it-abbr
   it('should be able to support abbreviations', async () => {
     source = `
       *[D4C]: Dirty Deeds Done Dirt Cheap
@@ -70,6 +71,7 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('</abbr>');
   });
 
+  // Tests markdown-it-deflist
   it('should be able to support definition lists', async () => {
     source = `
       First Term
@@ -88,6 +90,17 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('</dd>');
   });
 
+  // Tests markdown-it-emoji
+  it('should be able to support emojis', async () => {
+    source = ':tada:';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.text()).toEqual('🎉');
+  });
+
+  // Tests markdown-it-footnote
   it('should be able to support footnotes', async () => {
     source = `
       Here is a footnote reference,[^1] and another.[^longnote]
@@ -107,6 +120,17 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('footnote-backref');
   });
 
+  // Tests markdown-it-ins
+  it('should be able to support <insert> tags', async () => {
+    source = '++inserted++';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</ins>');
+  });
+
+  // Tests markdown-it-sub
   it('should be able to support subscript', async () => {
     source = 'H~2~0';
     const result = render(source);
@@ -116,6 +140,7 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('</sub>');
   });
 
+  // Tests markdown-it-sup
   it('should be able to support superscript', async () => {
     source = '29^th^';
     const result = render(source);
@@ -125,6 +150,7 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('</sup>');
   });
 
+  // Tests markdown-it-task-lists
   it('should be able to support task lists', async () => {
     source = `
       - [ ] unchecked
@@ -135,23 +161,5 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('checkbox');
-  });
-
-  it('should be able to support emojis', async () => {
-    source = ':tada:';
-    const result = render(source);
-
-    await wrapper.setProps({ source });
-    expect(wrapper.html()).toContain(result);
-    expect(wrapper.text()).toEqual('🎉');
-  });
-
-  it('should be able to support <insert> tags', async () => {
-    source = '++inserted++';
-    const result = render(source);
-
-    await wrapper.setProps({ source });
-    expect(wrapper.html()).toContain(result);
-    expect(wrapper.html()).toContain('</ins>');
   });
 });
