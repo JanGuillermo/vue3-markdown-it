@@ -14,19 +14,19 @@ npm install @theonlyjan/vue-markdown-it
 ```
 
 ## Supported Plugins
-- [markdown-it](https://github.com/markdown-it/markdown-it)
-- [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
-- [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor)
-- [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
-- [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji)
-- [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
-- [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins)
-- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex)
-- [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
-- [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
-- [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
-- [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists)
-- [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right)
+- [markdown-it](https://github.com/markdown-it/markdown-it) - __The one__ that started it all
+- [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr) - Add abbreviations
+- [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) - Add anchors
+- [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist) - Add definition lists
+- [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) - Add emojis
+- [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
+- [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
+- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
+- [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
+- [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
+- [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
+- [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) - Add task lists
+- [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right) - Add table of contents
 
 ## Usage
 ### Global Use
