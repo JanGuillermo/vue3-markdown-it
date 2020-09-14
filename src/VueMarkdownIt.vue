@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import 'markdown-it-latex/dist/index.css';
-
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
@@ -18,6 +16,7 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
+import 'markdown-it-latex/dist/index.css';
 
 export default {
   name: 'vue-markdown-it',
