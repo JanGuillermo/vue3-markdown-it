@@ -193,7 +193,7 @@ describe('VueMarkdownIt unit tests', () => {
 
   // Tests markdown-it-strikethrough-alt
   it('should be able to support strikethrough', async () => {
-    source = '--vue-markdown-it sucks--';
+    source = '--vue3-markdown-it sucks--';
     const result = render(source);
 
     await wrapper.setProps({ source });

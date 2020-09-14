@@ -2,15 +2,15 @@
   <img width="200" src="logo.png" alt="logo">
 </p>
 
-# vue-markdown-it
+# vue3-markdown-it
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue-markdown-it)](https://www.npmjs.com/package/@theonlyjan/vue-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue-markdown-it) [![Known Vulnerabilities](https://snyk.io/test/github/JanGuillermo/vue-markdown-it/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JanGuillermo/vue-markdown-it?targetFile=package.json) [![npm](https://img.shields.io/npm/dt/@theonlyjan/vue-markdown-it)](https://www.npmjs.com/package/@theonlyjan/vue-markdown-it)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue3-markdown-it)](https://www.npmjs.com/package/@theonlyjan/vue3-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue3-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue3-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue3-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue3-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue3-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue3-markdown-it) [![Known Vulnerabilities](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it?targetFile=package.json) [![npm](https://img.shields.io/npm/dt/@theonlyjan/vue3-markdown-it)](https://www.npmjs.com/package/@theonlyjan/vue3-markdown-it)
 
 > A Vue 3 [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
 
 ## Installation
 ```
-npm install @theonlyjan/vue-markdown-it
+npm install vue3-markdown-it
 ```
 
 ## Supported Plugins
@@ -34,7 +34,7 @@ npm install @theonlyjan/vue-markdown-it
 ### Global Use
 ```js
 import { createApp } from 'vue';
-import VueMarkdownIt from '@theonlyjan/vue-markdown-it';
+import VueMarkdownIt from '@theonlyjan/vue3-markdown-it';
 
 const app = createApp();
 
@@ -43,19 +43,19 @@ app.use(VueMarkdownIt);
 
 #### CSS
 ```js
-import '@theonlyjan/vue-markdown-it/lib/vue-markdown-it.css';
+import '@theonlyjan/vue3-markdown-it/lib/vue3-markdown-it.css';
 ```
 
 ### Single Use
 ```vue
 <template>
   <div>
-    <vue-markdown-it :source='source' />
+    <vue3-markdown-it :source='source' />
   </div>
 </template>
 
 <script>
-import VueMarkdownIt from '@theonlyjan/vue-markdown-it';
+import VueMarkdownIt from '@theonlyjan/vue3-markdown-it';
 
 export default {
   components: {
@@ -134,4 +134,4 @@ Type: `Boolean` | Default value: `false`
 Type: `Boolean` | Default value: `false`
 
 ## License
-[MIT](https://github.com/JanGuillermo/vue-markdown-it/blob/master/LICENSE)
+[MIT](https://github.com/JanGuillermo/vue3-markdown-it/blob/master/LICENSE)

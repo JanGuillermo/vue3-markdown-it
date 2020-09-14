@@ -23,7 +23,7 @@ import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
 
 export default {
-  name: 'vue-markdown-it',
+  name: 'vue3-markdown-it',
   props: {
     anchor: {
       type: Object,
