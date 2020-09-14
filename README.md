@@ -19,6 +19,7 @@ npm install @theonlyjan/vue-markdown-it
 - [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
 - [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji)
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
+- [markdown-it-include](https://github.com/camelaissani/markdown-it-include)
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins)
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex)
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
@@ -70,13 +71,7 @@ The following properties are supported:
 Type: `Boolean` | Default value: `false`
 
 ### `emoji`
-There are three available options. View [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) for more information.
-
-| `emoji` props | Description |
-| :-----------: | ----------- |
-| `defs`        | Rewrite available emoji definitions |
-| `enabled`     | Enable only specific emojis |
-| `shortcuts`   | Rewrite emoji shortcuts |
+> View [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) for more information.
 
 Type: `Object` | Default value: `null`
 
@@ -84,6 +79,11 @@ Type: `Object` | Default value: `null`
 > Enable HTML tags in source.
 
 Type: `Boolean` | Default value: `false`
+
+### `include`
+> View [markdown-it-include](https://github.com/camelaissani/markdown-it-include) for more information.
+
+Type: `Object` | Default value: `null`
 
 ### `langPrefix`
 > CSS language prefix for fenced blocks. Can be useful for external highlighters.
@@ -101,13 +101,7 @@ Type: `String | String[]` | Default value: `“”‘’`
 Type: `String` | Default value: `null`
 
 ### `tasklists`
-There are three available options. View [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) for more information.
-
-| `tasklists` props | Description |
-| :---------------: | ----------- |
-| `enabled`         | The rendered checkboxes are automatically disabled. Pass `true` to allow the checks. |
-| `label`           | Wrap the rendered list items in a `<label>` element. |
-| `labelAfter`      | Wrap the text in a `<label>` element after the checkbox. *requires `label` to be true*. |
+> View [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) for more information.
 
 Type: `Object` | Default value: `null`
 

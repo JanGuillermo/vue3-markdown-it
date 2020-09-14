@@ -9,6 +9,7 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItInclude from 'markdown-it-include';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
@@ -30,6 +31,10 @@ export default {
     html: {
       type: Boolean,
       default: false
+    },
+    include: {
+      type: Object,
+      default: new Array()
     },
     langPrefix: {
       type: String,
@@ -74,8 +79,9 @@ export default {
       this.md
         .use(MarkdownItAbbr)
         .use(MarkdownItDeflist)
-        .use(MarkdownItEmoji)
+        .use(MarkdownItEmoji, this.emoji)
         .use(MarkdownItFootnote)
+        .use(MarkdownItInclude, this.include)
         .use(MarkdownItIns)
         .use(MarkdownItLatex)
         .use(MarkdownItMark)

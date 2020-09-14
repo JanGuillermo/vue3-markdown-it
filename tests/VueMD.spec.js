@@ -4,6 +4,7 @@ import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItInclude from 'markdown-it-include';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
@@ -15,11 +16,15 @@ import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
 const md = new MarkdownIt();
 const render = (source) => md.render(dedent(source));
+const mdIncludeOptions = {
+  include: { root: './tests' }
+};
 
 md.use(MarkdownItAbbr)
   .use(MarkdownItDeflist)
   .use(MarkdownItEmoji)
   .use(MarkdownItFootnote)
+  .use(MarkdownItInclude, mdIncludeOptions.include)
   .use(MarkdownItIns)
   .use(MarkdownItLatex)
   .use(MarkdownItMark)
@@ -35,7 +40,8 @@ describe('VueMarkdownIt unit tests', () => {
     source = '# Hello World!';
     wrapper = mount(VueMarkdownIt, {
       props: {
-        source
+        source,
+        ...mdIncludeOptions
       }
     });
   });
@@ -122,6 +128,17 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('footnote-ref');
     expect(wrapper.html()).toContain('footnote-backref');
+  });
+
+  // Tests markdown-it-include
+  it('should be able to support including markdown fragment files', async () => {
+    source = '!!!include(markdown-it-include.md)!!!';
+    const result = render(source);
+
+    console.log(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
   });
 
   // Tests markdown-it-ins
