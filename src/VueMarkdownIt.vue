@@ -6,27 +6,40 @@
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
+import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
+import MarkdownItTOC from 'markdown-it-toc-done-right';
+import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
 
 export default {
   name: 'vue-markdown-it',
   props: {
+    anchor: {
+      type: Object,
+      default: new Object()
+    },
     breaks: {
       type: Boolean,
       default: false
     },
     emoji: {
       type: Object,
-      default: new Array()
+      default: new Object()
+    },
+    highlight: {
+      type: Object,
+      default: new Object()
     },
     html: {
       type: Boolean,
@@ -46,7 +59,11 @@ export default {
     },
     tasklists: {
       type: Object,
-      default: new Array()
+      default: new Object()
+    },
+    toc: {
+      type: Object,
+      default: new Object()
     },
     typographer: {
       type: Boolean,
@@ -63,26 +80,30 @@ export default {
     };
   },
   mounted() {
-    this.initializeMarkdown();
+    this.renderMarkdown();
   },
   updated() {
     this.renderMarkdown();
   },
   methods: {
-    initializeMarkdown() {
+    renderMarkdown() {
       this.md = new MarkdownIt();
 
       this.md
         .use(MarkdownItAbbr)
+        .use(MarkdownItAnchor, this.anchor)
         .use(MarkdownItDeflist)
         .use(MarkdownItEmoji, this.emoji)
         .use(MarkdownItFootnote)
+        .use(MarkdownItHighlightjs, this.highlight)
         .use(MarkdownItIns)
         .use(MarkdownItLatex)
         .use(MarkdownItMark)
+        .use(MarkdownItStrikethroughAlt)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
-        .use(MarkdownItTasklists, this.tasklists);
+        .use(MarkdownItTasklists, this.tasklists)
+        .use(MarkdownItTOC, this.toc);
 
       this.md.set({
         breaks: this.breaks,
@@ -93,9 +114,6 @@ export default {
         xhtmlOut: this.xhtmlOut
       });
 
-      this.renderMarkdown();
-    },
-    renderMarkdown() {
       this.$refs.md.innerHTML = this.md.render(dedent(this.source));
     }
   }

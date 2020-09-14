@@ -4,7 +4,7 @@
 
 # vue-markdown-it
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue-markdown-it) ![npm](https://img.shields.io/npm/dt/@theonlyjan/vue-markdown-it)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue-markdown-it)](https://www.npmjs.com/package/@theonlyjan/vue-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue-markdown-it) [![Known Vulnerabilities](https://snyk.io/test/github/JanGuillermo/vue-markdown-it/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JanGuillermo/vue-markdown-it?targetFile=package.json) [![npm](https://img.shields.io/npm/dt/@theonlyjan/vue-markdown-it)](https://www.npmjs.com/package/@theonlyjan/vue-markdown-it)
 
 > A Vue [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
 
@@ -14,17 +14,21 @@ npm install @theonlyjan/vue-markdown-it
 ```
 
 ## Supported Plugins
-- [markdown-it](https://github.com/markdown-it/markdown-it)
-- [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
-- [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
-- [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji)
-- [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
-- [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins)
-- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex)
-- [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
-- [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)
-- [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)
-- [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists)
+- [markdown-it](https://github.com/markdown-it/markdown-it) - __The one__ that started it all
+- [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr) - Add abbreviations
+- [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) - Add anchors
+- [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist) - Add definition lists
+- [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) - Add emojis
+- [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
+- [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) - Add highlighting for code blocks
+- [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
+- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
+- [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
+- [markdown-it-strikethrough-alt](https://github.com/jay-hodgson/markdown-it-strikethrough-alt) - Add strikethrough
+- [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
+- [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
+- [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) - Add task lists
+- [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right) - Add table of contents
 
 ## Usage
 ### Global Use
@@ -64,6 +68,11 @@ export default {
 ## Props
 The following properties are supported:
 
+### `anchor`
+> View [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) for more information.
+
+Type: `Object` | Default value: `null`
+
 ### `breaks`
 > Convert `\n` in paragraphs into `<br>`.
 
@@ -71,6 +80,11 @@ Type: `Boolean` | Default value: `false`
 
 ### `emoji`
 > View [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji) for more information.
+
+Type: `Object` | Default value: `null`
+
+### `highlight`
+> View [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) for more information.
 
 Type: `Object` | Default value: `null`
 
@@ -96,6 +110,11 @@ Type: `String` | Default value: `null`
 
 ### `tasklists`
 > View [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) for more information.
+
+Type: `Object` | Default value: `null`
+
+### `toc`
+> View [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right) for more information.
 
 Type: `Object` | Default value: `null`
 

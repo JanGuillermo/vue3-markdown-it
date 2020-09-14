@@ -1,15 +1,19 @@
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
 import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
+import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
+import MarkdownItTOC from 'markdown-it-toc-done-right';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
@@ -17,15 +21,19 @@ const md = new MarkdownIt();
 const render = (source) => md.render(dedent(source));
 
 md.use(MarkdownItAbbr)
+  .use(MarkdownItAnchor)
   .use(MarkdownItDeflist)
   .use(MarkdownItEmoji)
   .use(MarkdownItFootnote)
+  .use(MarkdownItHighlightjs)
   .use(MarkdownItIns)
   .use(MarkdownItLatex)
   .use(MarkdownItMark)
+  .use(MarkdownItStrikethroughAlt)
   .use(MarkdownItSub)
   .use(MarkdownItSup)
-  .use(MarkdownItTasklists);
+  .use(MarkdownItTasklists)
+  .use(MarkdownItTOC);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -73,6 +81,19 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('</abbr>');
+  });
+
+  // Tests markdown-it-anchor
+  it('should be able to support anchors', async () => {
+    source = `
+      # First header
+      Lorem ipsum.
+    `;
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('first-header');
   });
 
   // Tests markdown-it-deflist
@@ -124,6 +145,22 @@ describe('VueMarkdownIt unit tests', () => {
     expect(wrapper.html()).toContain('footnote-backref');
   });
 
+  // Tests markdown-it-highlightjs
+  it('should be able to support highlighting', async () => {
+    source = `
+      \`\`\`
+      this is code
+      \`\`\`
+
+      this isn't code
+    `;
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('hljs');
+  });
+
   // Tests markdown-it-ins
   it('should be able to support <insert> tags', async () => {
     source = '++inserted++';
@@ -152,6 +189,16 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('</mark>');
+  });
+
+  // Tests markdown-it-strikethrough-alt
+  it('should be able to support strikethrough', async () => {
+    source = '--vue-markdown-it sucks--';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</s>');
   });
 
   // Tests markdown-it-sub
@@ -185,5 +232,23 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('checkbox');
+  });
+
+  // Tests markdown-it-toc-done-right
+  it('should be able to support table of contents', async () => {
+    source = `
+      [[toc]]
+
+      # First heading
+      Swag
+
+      ## Second heading
+      Awesome sauce!
+    `;
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('table-of-contents');
   });
 });
