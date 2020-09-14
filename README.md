@@ -109,9 +109,5 @@ Type: `Boolean` | Default value: `false`
 
 Type: `Boolean` | Default value: `false`
 
-| Prop        | Description | Default Value |
-| :---------: | ----------- | :-----------: |
-| tasklists   | Available options: *enabled*, *label*, & *labelAfter*. View [here](https://github.com/revin/markdown-it-task-lists) for more information. | {} |
-
 ## License
 [MIT](https://github.com/JanGuillermo/vue-markdown-it/blob/master/LICENSE)
