@@ -3,7 +3,19 @@
 </template>
 
 <script>
+import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
+import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItDeflist from 'markdown-it-deflist';
+import MarkdownItEmoji from 'markdown-it-emoji';
+import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItIns from 'markdown-it-ins';
+import MarkdownItLatex from 'markdown-it-latex';
+import MarkdownItMark from 'markdown-it-mark';
+import MarkdownItSub from 'markdown-it-sub';
+import MarkdownItSup from 'markdown-it-sup';
+import MarkdownItTasklists from 'markdown-it-task-lists';
+import 'markdown-it-latex/dist/index.css';
 
 export default {
   name: 'vue-markdown-it',
@@ -11,6 +23,10 @@ export default {
     breaks: {
       type: Boolean,
       default: false
+    },
+    emoji: {
+      type: Object,
+      default: new Array()
     },
     html: {
       type: Boolean,
@@ -27,6 +43,10 @@ export default {
     source: {
       type: String,
       default: ''
+    },
+    tasklists: {
+      type: Object,
+      default: new Array()
     },
     typographer: {
       type: Boolean,
@@ -52,6 +72,18 @@ export default {
     initializeMarkdown() {
       this.md = new MarkdownIt();
 
+      this.md
+        .use(MarkdownItAbbr)
+        .use(MarkdownItDeflist)
+        .use(MarkdownItEmoji, this.emoji)
+        .use(MarkdownItFootnote)
+        .use(MarkdownItIns)
+        .use(MarkdownItLatex)
+        .use(MarkdownItMark)
+        .use(MarkdownItSub)
+        .use(MarkdownItSup)
+        .use(MarkdownItTasklists, this.tasklists);
+
       this.md.set({
         breaks: this.breaks,
         html: this.html,
@@ -64,7 +96,7 @@ export default {
       this.renderMarkdown();
     },
     renderMarkdown() {
-      this.$refs.md.innerHTML = this.md.render(this.source);
+      this.$refs.md.innerHTML = this.md.render(dedent(this.source));
     }
   }
 };
