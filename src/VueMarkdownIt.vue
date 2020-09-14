@@ -8,6 +8,7 @@ import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItSub from 'markdown-it-sub';
 
 export default {
   name: 'vue-markdown-it',
@@ -59,7 +60,8 @@ export default {
       this.md
         .use(MarkdownItAbbr)
         .use(MarkdownItDeflist)
-        .use(MarkdownItFootnote);
+        .use(MarkdownItFootnote)
+        .use(MarkdownItSub);
 
       this.md.set({
         breaks: this.breaks,

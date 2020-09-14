@@ -3,13 +3,17 @@ import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItFootnote from 'markdown-it-footnote';
+import MarkdownItSub from 'markdown-it-sub';
 import { mount } from '@vue/test-utils';
 import VueMarkdownIt from '@/VueMarkdownIt.vue';
 
 const md = new MarkdownIt();
 const render = (source) => md.render(dedent(source));
 
-md.use(MarkdownItAbbr).use(MarkdownItDeflist).use(MarkdownItFootnote);
+md.use(MarkdownItAbbr)
+  .use(MarkdownItDeflist)
+  .use(MarkdownItFootnote)
+  .use(MarkdownItSub);
 
 describe('VueMarkdownIt unit tests', () => {
   let wrapper;
@@ -89,11 +93,18 @@ describe('VueMarkdownIt unit tests', () => {
     `;
     const result = render(source);
 
-    console.log(result);
-
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('footnote-ref');
     expect(wrapper.html()).toContain('footnote-backref');
+  });
+
+  it('should be able to support subscript', async () => {
+    source = 'H~2~0';
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('</sub>');
   });
 });
