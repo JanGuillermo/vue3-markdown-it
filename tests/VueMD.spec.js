@@ -1,6 +1,7 @@
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
@@ -17,6 +18,7 @@ const md = new MarkdownIt();
 const render = (source) => md.render(dedent(source));
 
 md.use(MarkdownItAbbr)
+  .use(MarkdownItAnchor)
   .use(MarkdownItDeflist)
   .use(MarkdownItEmoji)
   .use(MarkdownItFootnote)
@@ -73,6 +75,19 @@ describe('VueMarkdownIt unit tests', () => {
     await wrapper.setProps({ source });
     expect(wrapper.html()).toContain(result);
     expect(wrapper.html()).toContain('</abbr>');
+  });
+
+  // Tests markdown-it-anchor
+  it('should be able to support anchors', async () => {
+    source = `
+      # First header
+      Lorem ipsum.
+    `;
+    const result = render(source);
+
+    await wrapper.setProps({ source });
+    expect(wrapper.html()).toContain(result);
+    expect(wrapper.html()).toContain('first-header');
   });
 
   // Tests markdown-it-deflist

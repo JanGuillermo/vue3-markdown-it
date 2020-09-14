@@ -16,6 +16,7 @@ npm install @theonlyjan/vue-markdown-it
 ## Supported Plugins
 - [markdown-it](https://github.com/markdown-it/markdown-it)
 - [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
+- [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor)
 - [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)
 - [markdown-it-emoji](https://github.com/markdown-it/markdown-it-emoji)
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
@@ -63,6 +64,11 @@ export default {
 
 ## Props
 The following properties are supported:
+
+### `anchor`
+> View [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor) for more information.
+
+Type: `Object` | Default value: `null`
 
 ### `breaks`
 > Convert `\n` in paragraphs into `<br>`.

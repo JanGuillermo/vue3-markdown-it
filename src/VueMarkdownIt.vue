@@ -6,6 +6,7 @@
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
+import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItDeflist from 'markdown-it-deflist';
 import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
@@ -20,6 +21,10 @@ import 'markdown-it-latex/dist/index.css';
 export default {
   name: 'vue-markdown-it',
   props: {
+    anchor: {
+      type: Object,
+      default: new Array()
+    },
     breaks: {
       type: Boolean,
       default: false
@@ -74,6 +79,7 @@ export default {
 
       this.md
         .use(MarkdownItAbbr)
+        .use(MarkdownItAnchor, this.anchor)
         .use(MarkdownItDeflist)
         .use(MarkdownItEmoji, this.emoji)
         .use(MarkdownItFootnote)
