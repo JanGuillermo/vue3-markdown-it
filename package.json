@@ -1,6 +1,6 @@
 {
   "name": "@theonlyjan/vue-markdown-it",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Jan Guillermo",
   "description": "A Vue markdown-it wrapper plugin",
   "license": "MIT",
@@ -11,9 +11,10 @@
     "markdown",
     "markdown-it"
   ],
-  "main": "src/index.js",
+  "main": "lib/vue-markdown-it.common.js",
+  "module": "lib/vue-markdown-it.umd.js",
   "scripts": {
-    "build": "vue-cli-service build --target lib ./src/index.js",
+    "build": "vue-cli-service build --dest lib --target lib ./src/index.js && rm ./lib/demo.html",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },
