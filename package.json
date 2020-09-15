@@ -11,10 +11,10 @@
     "markdown",
     "markdown-it"
   ],
-  "main": "lib/vue3-markdown-it.common.js",
-  "module": "lib/vue3-markdown-it.umd.js",
+  "main": "dist/vue3-markdown-it.common.js",
+  "module": "dist/vue3-markdown-it.umd.js",
   "scripts": {
-    "build": "vue-cli-service build --dest lib --target lib ./src/index.js && rm ./lib/demo.html",
+    "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit"
   },
