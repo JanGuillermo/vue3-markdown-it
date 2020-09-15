@@ -1,6 +1,5 @@
 import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
-
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
@@ -17,7 +16,7 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
-import { onMounted, onUpdated, ref } from 'vue';
+import { h, onMounted, onUpdated, ref } from 'vue';
 
 const props = {
   anchor: {
@@ -72,48 +71,40 @@ const props = {
 
 export default {
   name: 'vue3-markdown-it',
-  template: '<div ref="md" />',
   props,
-  setup() {
-    // State
+  setup(props) {
     const md = ref();
-
-    // Hooks
-    onMounted(() => renderMarkdown());
-    onUpdated(() => renderMarkdown());
-
-    // Methods
     const renderMarkdown = () => {
       let markdown = new MarkdownIt()
         .use(MarkdownItAbbr)
-        .use(MarkdownItAnchor, this.anchor)
+        .use(MarkdownItAnchor, props.anchor)
         .use(MarkdownItDeflist)
-        .use(MarkdownItEmoji, this.emoji)
+        .use(MarkdownItEmoji, props.emoji)
         .use(MarkdownItFootnote)
-        .use(MarkdownItHighlightjs, this.highlight)
+        .use(MarkdownItHighlightjs, props.highlight)
         .use(MarkdownItIns)
         .use(MarkdownItLatex)
         .use(MarkdownItMark)
         .use(MarkdownItStrikethroughAlt)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
-        .use(MarkdownItTasklists, this.tasklists)
-        .use(MarkdownItTOC, this.toc)
+        .use(MarkdownItTasklists, props.tasklists)
+        .use(MarkdownItTOC, props.toc)
         .set({
-          breaks: this.breaks,
-          html: this.html,
-          langPrefix: this.langPrefix,
-          quotes: this.quotes,
-          typographer: this.typographer,
-          xhtmlOut: this.xhtmlOut
+          breaks: props.breaks,
+          html: props.html,
+          langPrefix: props.langPrefix,
+          quotes: props.quotes,
+          typographer: props.typographer,
+          xhtmlOut: props.xhtmlOut
         });
 
-      md.value = markdown.render(dedent(this.source));
+      md.value = markdown.render(dedent(props.source));
     };
 
-    return {
-      md,
-      renderMarkdown
-    };
+    onMounted(() => renderMarkdown());
+    onUpdated(() => renderMarkdown());
+
+    return () => h('div', { innerHTML: md.value });
   }
 };
