@@ -1,4 +1,3 @@
-import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
@@ -12,8 +11,9 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
-import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
+import MarkdownItTasklists from 'markdown-it-task-lists';
+import dedent from 'dedent';
 
 const md = new MarkdownIt();
 const render = (source) => md.render(source ? dedent(source) : '');

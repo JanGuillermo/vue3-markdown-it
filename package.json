@@ -19,6 +19,7 @@
     "test": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "dedent": "^0.7.0",
     "dedent-js": "^1.0.1",
     "highlight.js": "^10.2.0",
     "markdown-it": "^11.0.0",
