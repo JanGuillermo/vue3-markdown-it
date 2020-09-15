@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.vue'],
+  collectCoverageFrom: ['src/**/*.js'],
   coverageDirectory: 'coverage',
   moduleNameMapper: {
     '\\.(css)$': '<rootDir>/__tests__/mocks/style.js',
@@ -8,8 +8,5 @@ module.exports = {
   },
   preset: '@vue/cli-plugin-unit-jest',
   setupFilesAfterEnv: ['<rootDir>/__tests__/setup.js'],
-  testMatch: ['**/__tests__/**/*.spec.[jt]s?(x)'],
-  transform: {
-    '^.+\\.vue$': 'vue-jest'
-  }
+  testMatch: ['**/__tests__/**/*.spec.[jt]s?(x)']
 };
