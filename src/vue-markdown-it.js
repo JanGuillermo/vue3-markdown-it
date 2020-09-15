@@ -1,6 +1,5 @@
 import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
-
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
@@ -17,101 +16,95 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
+import { h, onMounted, onUpdated, ref } from 'vue';
+
+const props = {
+  anchor: {
+    type: Object,
+    default: () => ({})
+  },
+  breaks: {
+    type: Boolean,
+    default: false
+  },
+  emoji: {
+    type: Object,
+    default: () => ({})
+  },
+  highlight: {
+    type: Object,
+    default: () => ({})
+  },
+  html: {
+    type: Boolean,
+    default: false
+  },
+  langPrefix: {
+    type: String,
+    default: 'language-'
+  },
+  quotes: {
+    type: String,
+    default: '“”‘’'
+  },
+  source: {
+    type: String,
+    default: ''
+  },
+  tasklists: {
+    type: Object,
+    default: () => ({})
+  },
+  toc: {
+    type: Object,
+    default: () => ({})
+  },
+  typographer: {
+    type: Boolean,
+    default: false
+  },
+  xhtmlOut: {
+    type: Boolean,
+    default: false
+  }
+};
 
 export default {
   name: 'vue3-markdown-it',
-  template: '<div ref="md" />',
-  props: {
-    anchor: {
-      type: Object,
-      default: () => ({})
-    },
-    breaks: {
-      type: Boolean,
-      default: false
-    },
-    emoji: {
-      type: Object,
-      default: () => ({})
-    },
-    highlight: {
-      type: Object,
-      default: () => ({})
-    },
-    html: {
-      type: Boolean,
-      default: false
-    },
-    langPrefix: {
-      type: String,
-      default: 'language-'
-    },
-    quotes: {
-      type: String,
-      default: '“”‘’'
-    },
-    source: {
-      type: String,
-      default: ''
-    },
-    tasklists: {
-      type: Object,
-      default: () => ({})
-    },
-    toc: {
-      type: Object,
-      default: () => ({})
-    },
-    typographer: {
-      type: Boolean,
-      default: false
-    },
-    xhtmlOut: {
-      type: Boolean,
-      default: false
-    }
-  },
-  data() {
-    return {
-      md: null
-    };
-  },
-  mounted() {
-    this.renderMarkdown();
-  },
-  updated() {
-    this.renderMarkdown();
-  },
-  methods: {
-    renderMarkdown() {
-      this.md = new MarkdownIt();
-
-      this.md
+  props,
+  setup(props) {
+    const md = ref();
+    const renderMarkdown = () => {
+      let markdown = new MarkdownIt()
         .use(MarkdownItAbbr)
-        .use(MarkdownItAnchor, this.anchor)
+        .use(MarkdownItAnchor, props.anchor)
         .use(MarkdownItDeflist)
-        .use(MarkdownItEmoji, this.emoji)
+        .use(MarkdownItEmoji, props.emoji)
         .use(MarkdownItFootnote)
-        .use(MarkdownItHighlightjs, this.highlight)
+        .use(MarkdownItHighlightjs, props.highlight)
         .use(MarkdownItIns)
         .use(MarkdownItLatex)
         .use(MarkdownItMark)
         .use(MarkdownItStrikethroughAlt)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
-        .use(MarkdownItTasklists, this.tasklists)
-        .use(MarkdownItTOC, this.toc);
+        .use(MarkdownItTasklists, props.tasklists)
+        .use(MarkdownItTOC, props.toc)
+        .set({
+          breaks: props.breaks,
+          html: props.html,
+          langPrefix: props.langPrefix,
+          quotes: props.quotes,
+          typographer: props.typographer,
+          xhtmlOut: props.xhtmlOut
+        });
 
-      this.md.set({
-        breaks: this.breaks,
-        html: this.html,
-        langPrefix: this.langPrefix,
-        quotes: this.quotes,
-        typographer: this.typographer,
-        xhtmlOut: this.xhtmlOut
-      });
+      md.value = markdown.render(dedent(props.source));
+    };
 
-      this.$refs.md.innerHTML = this.md.render(dedent(this.source));
-    }
+    onMounted(() => renderMarkdown());
+    onUpdated(() => renderMarkdown());
+
+    return () => h('div', { innerHTML: md.value });
   }
 };

@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.js'],
+  collectCoverageFrom: ['src/vue-markdown-it.js'],
   coverageDirectory: 'coverage',
   moduleNameMapper: {
     '\\.(css)$': '<rootDir>/__tests__/mocks/style.js',
