@@ -1,8 +1,6 @@
-<template>
-  <div ref="md" />
-</template>
+import 'highlight.js/styles/default.css';
+import 'markdown-it-latex/dist/index.css';
 
-<script>
 import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
@@ -19,11 +17,10 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
-import 'highlight.js/styles/default.css';
-import 'markdown-it-latex/dist/index.css';
 
 export default {
   name: 'vue3-markdown-it',
+  template: '<div ref="md" />',
   props: {
     anchor: {
       type: Object,
@@ -118,4 +115,3 @@ export default {
     }
   }
 };
-</script>

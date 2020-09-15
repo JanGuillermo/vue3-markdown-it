@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import VueMarkdownIt from '@/VueMarkdownIt.vue';
+import VueMarkdownIt from '@/vue-markdown-it';
 
 beforeEach(() => {
   global.wrapper = mount(VueMarkdownIt);
