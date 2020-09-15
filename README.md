@@ -43,7 +43,7 @@ app.use(VueMarkdownIt);
 
 #### CSS
 ```js
-import 'vue3-markdown-it/lib/vue3-markdown-it.css';
+import 'vue3-markdown-it/dist/vue3-markdown-it.css';
 ```
 
 ### Single Use
