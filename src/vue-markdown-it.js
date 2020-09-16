@@ -1,5 +1,3 @@
-import 'markdown-it-latex/dist/index.css';
-
 import { h, onMounted, onUpdated, ref } from 'vue';
 
 import MarkdownIt from 'markdown-it';
