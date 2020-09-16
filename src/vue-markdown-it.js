@@ -1,6 +1,8 @@
 import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
-import dedent from 'dedent-js';
+
+import { h, onMounted, onUpdated, ref } from 'vue';
+
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
@@ -16,7 +18,6 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
-import { h, onMounted, onUpdated, ref } from 'vue';
 
 const props = {
   anchor: {
@@ -99,7 +100,7 @@ export default {
           xhtmlOut: props.xhtmlOut
         });
 
-      md.value = markdown.render(dedent(props.source));
+      md.value = markdown.render(props.source);
     };
 
     onMounted(() => renderMarkdown());

@@ -5,8 +5,8 @@ describe('markdown-it-anchor tests', () => {
 
   it('should be able to support anchors', async () => {
     source = `
-      # First header
-      Lorem ipsum.
+# First header
+Lorem ipsum.
     `;
     result = render(source);
 

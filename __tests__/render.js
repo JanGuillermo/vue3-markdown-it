@@ -1,4 +1,3 @@
-import dedent from 'dedent-js';
 import MarkdownIt from 'markdown-it';
 import MarkdownItAbbr from 'markdown-it-abbr';
 import MarkdownItAnchor from 'markdown-it-anchor';
@@ -16,7 +15,7 @@ import MarkdownItTasklists from 'markdown-it-task-lists';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
 
 const md = new MarkdownIt();
-const render = (source) => md.render(source ? dedent(source) : '');
+const render = (source) => md.render(source);
 
 md.use(MarkdownItAbbr)
   .use(MarkdownItAnchor)
