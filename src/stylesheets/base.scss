@@ -1,0 +1,11 @@
+@import 'reset';
+@import 'vendors';
+
+html,
+body {
+  @apply font-sans m-0 w-full h-screen text-gray-900 bg-gray-200;
+}
+
+#app {
+  @apply flex flex-col items-center gap-8 h-full max-h-screen p-8 justify-between;
+}

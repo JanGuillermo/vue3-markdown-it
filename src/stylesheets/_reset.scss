@@ -1,0 +1,14 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+blockquote {
+  background: #f9f9f9;
+}
