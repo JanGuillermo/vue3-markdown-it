@@ -24,7 +24,6 @@ npm install vue3-markdown-it
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
-- [markdown-it-strikethrough-alt](https://github.com/jay-hodgson/markdown-it-strikethrough-alt) - Add strikethrough
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
 - [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) - Add task lists
