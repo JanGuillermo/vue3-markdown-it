@@ -1,6 +1,6 @@
 {
   "name": "vue3-markdown-it",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Jan Guillermo",
   "description": "A Vue markdown-it wrapper plugin",
   "license": "MIT",
@@ -11,16 +11,15 @@
     "markdown",
     "markdown-it"
   ],
-  "main": "lib/vue3-markdown-it.common.js",
-  "module": "lib/vue3-markdown-it.umd.js",
+  "main": "dist/vue3-markdown-it.common.js",
+  "module": "dist/vue3-markdown-it.umd.js",
   "scripts": {
-    "build": "vue-cli-service build --dest lib --target lib ./src/index.js && rm ./lib/demo.html",
+    "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "prepare": "npm run test && npm run build"
   },
   "dependencies": {
-    "dedent-js": "^1.0.1",
-    "highlight.js": "^10.2.0",
     "markdown-it": "^11.0.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^5.3.0",

@@ -1,13 +1,12 @@
 module.exports = {
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.vue'],
+  collectCoverageFrom: ['src/vue-markdown-it.js'],
   coverageDirectory: 'coverage',
   moduleNameMapper: {
-    '\\.(css)$': '<rootDir>/tests/mocks/styleMock.js'
+    '\\.(css)$': '<rootDir>/__tests__/mocks/style.js',
+    '#(.*)': '<rootDir>/__tests__/$1'
   },
   preset: '@vue/cli-plugin-unit-jest',
-  testMatch: ['**/tests/**/*.spec.[jt]s?(x)', '**/__tests__/*.[jt]s?(x)'],
-  transform: {
-    '^.+\\.vue$': 'vue-jest'
-  }
+  setupFilesAfterEnv: ['<rootDir>/__tests__/setup.js'],
+  testMatch: ['**/__tests__/**/*.spec.[jt]s?(x)']
 };

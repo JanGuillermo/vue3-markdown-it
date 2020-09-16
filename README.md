@@ -41,9 +41,15 @@ const app = createApp();
 app.use(VueMarkdownIt);
 ```
 
-#### CSS
+### CSS
+If you want to use LaTeX, you'll have to import a CSS file from [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex).
 ```js
-import 'vue3-markdown-it/lib/vue3-markdown-it.css';
+import 'markdown-it-latex/dist/index.css';
+```
+
+If you want to use highlighting for code blocks, you'll have to import a CSS file from [highlight.js](https://github.com/highlightjs/highlight.js). View more styles [here](https://github.com/highlightjs/highlight.js/tree/master/src/styles). The code sample below imports the Monokai styling.
+```js
+import 'highlight.js/styles/monokai.css';
 ```
 
 ### Single Use
