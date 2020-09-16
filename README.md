@@ -46,6 +46,11 @@ app.use(VueMarkdownIt);
 import 'vue3-markdown-it/dist/vue3-markdown-it.css';
 ```
 
+If you want to use highlighting for code blocks, you'll have to import a CSS file from [highlight.js](https://github.com/highlightjs/highlight.js). View more styles [here](https://github.com/highlightjs/highlight.js/tree/master/src/styles). The code sample below imports the Monokai styling.
+```js
+import 'highlight.js/styles/monokai.css';
+```
+
 ### Single Use
 ```vue
 <template>

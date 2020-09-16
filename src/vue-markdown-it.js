@@ -1,4 +1,3 @@
-import 'highlight.js/styles/default.css';
 import 'markdown-it-latex/dist/index.css';
 
 import { h, onMounted, onUpdated, ref } from 'vue';
