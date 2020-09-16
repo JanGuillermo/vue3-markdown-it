@@ -5,13 +5,13 @@ describe('markdown-it-toc-done-right tests', () => {
 
   it('should be able to support table of contents', async () => {
     source = `
-      [[toc]]
+[[toc]]
 
-      # First heading
-      Swag
+# First heading
+Swag
 
-      ## Second heading
-      Awesome sauce!
+## Second heading
+Awesome sauce!
     `;
     result = render(source);
 

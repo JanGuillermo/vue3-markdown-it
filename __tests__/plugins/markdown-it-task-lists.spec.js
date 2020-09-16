@@ -5,8 +5,8 @@ describe('markdown-it-task-lists tests', () => {
 
   it('should be able to support task lists', async () => {
     source = `
-      - [ ] unchecked
-      - [x] checked
+- [ ] unchecked
+- [x] checked
     `;
     result = render(source);
 

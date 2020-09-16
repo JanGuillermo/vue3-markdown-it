@@ -18,7 +18,6 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
 import MarkdownItTasklists from 'markdown-it-task-lists';
-import dedent from 'dedent';
 
 const props = {
   anchor: {
@@ -101,7 +100,7 @@ export default {
           xhtmlOut: props.xhtmlOut
         });
 
-      md.value = markdown.render(dedent(props.source));
+      md.value = markdown.render(props.source);
     };
 
     onMounted(() => renderMarkdown());

@@ -13,10 +13,9 @@ import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
 import MarkdownItTOC from 'markdown-it-toc-done-right';
 import MarkdownItTasklists from 'markdown-it-task-lists';
-import dedent from 'dedent';
 
 const md = new MarkdownIt();
-const render = (source) => md.render(source ? dedent(source) : '');
+const render = (source) => md.render(source);
 
 md.use(MarkdownItAbbr)
   .use(MarkdownItAnchor)
