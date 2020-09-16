@@ -16,7 +16,8 @@
   "scripts": {
     "build": "vue-cli-service build --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit"
+    "test": "vue-cli-service test:unit",
+    "prepare": "npm run test && npm run build"
   },
   "dependencies": {
     "markdown-it": "^11.0.0",
