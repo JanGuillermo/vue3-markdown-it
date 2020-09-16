@@ -16,8 +16,8 @@ import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
-import MarkdownItTOC from 'markdown-it-toc-done-right';
 import MarkdownItTasklists from 'markdown-it-task-lists';
+import MarkdownItTOC from 'markdown-it-toc-done-right';
 
 const props = {
   anchor: {
