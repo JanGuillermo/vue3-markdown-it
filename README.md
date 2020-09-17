@@ -117,6 +117,42 @@ Type: `String` | Default value: `language-`
 
 Type: `Boolean` | Default value: `false`
 
+### `plugins` 🌟
+> Don't see your favorite markdown-it plugin in the list of supported plugins? You can create an array of plugins and bind it into the component!
+> > The array only consists of objects (plugins in that case). A plugin has two properties:
+> > - `plugin`: A `markdown-it` plugin imported into this
+> > - `options`: Set the options for a specific `markdown-it` plugin.
+> ```vue
+> <template>
+>   <div>
+>     <vue3-markdown-it :source='source' :plugins='plugins' />
+>   </div>
+> </template>
+>
+> <script>
+> import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
+> import VueMarkdownIt from 'vue3-markdown-it';
+> 
+> export default {
+>   components: {
+>     VueMarkdownIt
+>   },
+>   data() {
+>     return {
+>       source: '--this is not so cool!--',
+>       plugins = [
+>         {
+>           plugin: MarkdownItStrikethroughAlt
+>         }
+>       ]
+>     }
+>   }
+> }
+> </script>
+> ```
+
+Type: `Array` | Default value: `[]`
+
 ### `quotes`
 > Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).
 
