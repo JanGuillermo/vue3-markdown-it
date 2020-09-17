@@ -1,7 +1,7 @@
 <template lang="pug">
 section.flex.justify-center.gap-4
-  label(v-for='control in controls')
-    input(v-model='options[control]', type='checkbox')
+  label(v-for='control in controls', :id='control')
+    input(v-model='options[control]', type='checkbox', :for='control')
     | {{ control }}
 main.w-full.max-w-screen-xl.flex-1.flex.gap-8.overflow-hidden
   textarea.source(v-model='source')
