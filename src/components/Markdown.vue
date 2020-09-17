@@ -16,7 +16,7 @@ export default {
     return {
       source: '',
       options: {},
-      controls: ['breaks', 'html', 'typographer']
+      controls: ['breaks', 'html', 'linkify', 'typographer']
     };
   },
   mounted() {
