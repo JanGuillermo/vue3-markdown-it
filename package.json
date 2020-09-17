@@ -11,10 +11,9 @@
     "markdown",
     "markdown-it"
   ],
-  "main": "dist/vue3-markdown-it.common.js",
-  "module": "dist/vue3-markdown-it.umd.js",
+  "main": "dist/vue3-markdown-it.umd.min.js",
   "scripts": {
-    "build": "vue-cli-service build --target lib ./src/index.js",
+    "build": "vue-cli-service build --formats umd-min --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit",
     "prepare": "npm run test && npm run build"
