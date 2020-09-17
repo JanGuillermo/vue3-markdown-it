@@ -45,7 +45,7 @@ const props = {
     default: false
   },
   plugins: {
-    type: Array | Object,
+    type: Array,
     default: () => []
   },
   quotes: {
@@ -104,7 +104,7 @@ export default {
           xhtmlOut: props.xhtmlOut
         });
 
-      this.plugins.forEach(({ plugin, options = {} }) => {
+      props.plugins.forEach(({ plugin, options = {} }) => {
         markdown.use(plugin, options);
       });
 
