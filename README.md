@@ -26,7 +26,6 @@ npm install vue3-markdown-it
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
 - [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) - Add highlighting for code blocks
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
-- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
@@ -45,11 +44,6 @@ app.use(VueMarkdownIt);
 ```
 
 ### CSS
-If you want to use LaTeX, you'll have to import a CSS file from [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex).
-```js
-import 'markdown-it-latex/dist/index.css';
-```
-
 If you want to use highlighting for code blocks, you'll have to import a CSS file from [highlight.js](https://github.com/highlightjs/highlight.js). View more styles [here](https://github.com/highlightjs/highlight.js/tree/master/src/styles). The code sample below imports the Monokai styling.
 ```js
 import 'highlight.js/styles/monokai.css';

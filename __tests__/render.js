@@ -6,7 +6,6 @@ import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
-import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
@@ -23,7 +22,6 @@ md.use(MarkdownItAbbr)
   .use(MarkdownItFootnote)
   .use(MarkdownItHighlightjs)
   .use(MarkdownItIns)
-  .use(MarkdownItLatex)
   .use(MarkdownItMark)
   .use(MarkdownItSub)
   .use(MarkdownItSup)

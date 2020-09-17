@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added support for external plugins using a new property `plugins`
 
+### Removed
+- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) dependency
+
 ## [1.0.3] - 2020-09-16
 ### Added
 - Added `linkify` property
@@ -16,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reduced production library size
 
 ### Removed
-- `markdown-it-strikethrough-alt` dependency
+- [markdown-it-strikethrough-alt](https://github.com/jay-hodgson/markdown-it-strikethrough-alt) dependency
 
 ## [1.0.2] - 2020-09-15
 ### Added
@@ -32,8 +35,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Omitted the production library folder
 - Omitted the includes for LaTeX + highlight.js styles
-- `dedent` dependency
-- `highlight.js` dependency
+- [dedent](https://github.com/MartinKolarik/dedent-js) dependency
+- [highlight.js](https://github.com/highlightjs/highlight.js) dependency
 
 ## [1.0.1] - 2020-09-14
 ### Added
