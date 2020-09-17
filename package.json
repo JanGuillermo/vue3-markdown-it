@@ -16,7 +16,7 @@
     "build": "vue-cli-service build --formats umd-min --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit",
-    "prepare": "npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "dependencies": {
     "markdown-it": "^11.0.0",
@@ -47,6 +47,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^4.3.0",
     "prettier": "^2.1.1",
     "typescript": "^4.0.2",
     "vue": "^3.0.0-rc.11",
@@ -59,5 +60,11 @@
   },
   "bugs": {
     "url": "https://github.com/JanGuillermo/vue3-markdown-it/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test && npm run build"
+    }
   }
 }
