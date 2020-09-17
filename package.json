@@ -1,6 +1,6 @@
 {
   "name": "vue3-markdown-it",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Jan Guillermo",
   "description": "A Vue markdown-it wrapper plugin",
   "license": "MIT",
@@ -11,10 +11,9 @@
     "markdown",
     "markdown-it"
   ],
-  "main": "dist/vue3-markdown-it.common.js",
-  "module": "dist/vue3-markdown-it.umd.js",
+  "main": "dist/vue3-markdown-it.umd.min.js",
   "scripts": {
-    "build": "vue-cli-service build --target lib ./src/index.js",
+    "build": "vue-cli-service build --formats umd-min --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit",
     "prepare": "npm run test && npm run build"
@@ -30,7 +29,6 @@
     "markdown-it-ins": "^3.0.0",
     "markdown-it-latex": "^0.2.0",
     "markdown-it-mark": "^3.0.0",
-    "markdown-it-strikethrough-alt": "^1.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-lists": "^2.1.1",
@@ -54,6 +52,7 @@
     "vue": "^3.0.0-rc.11",
     "vue-jest": "^5.0.0-0"
   },
+  "homepage": "https://janguillermo.github.io/vue3-markdown-it/",
   "repository": {
     "type": "git",
     "url": "https://github.com/JanGuillermo/vue3-markdown-it.git"

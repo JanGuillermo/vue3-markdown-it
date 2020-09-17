@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2020-09-16
+### Added
+- Added `linkify` property
+
+### Changed
+- Reduced production library size
+
+### Removed
+- `markdown-it-strikethrough-alt` dependency
+
 ## [1.0.2] - 2020-09-15
 ### Added
 - Added information on README for including LaTeX + highlight.js styles
@@ -40,5 +50,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) - Add task lists
   - [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right) - Add table of contents
 
+[1.0.3]: https://github.com/JanGuillermo/vue3-markdown-it/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/JanGuillermo/vue3-markdown-it/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/JanGuillermo/vue3-markdown-it/releases/tag/v1.0.1

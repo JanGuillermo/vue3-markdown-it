@@ -2,11 +2,15 @@
   <img width="200" src="logo.png" alt="logo">
 </p>
 
-# vue3-markdown-it
+# ✨ vue3-markdown-it ✨
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue3-markdown-it)](https://www.npmjs.com/package/vue3-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue3-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue3-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue3-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue3-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue3-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue3-markdown-it) [![Known Vulnerabilities](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it?targetFile=package.json) [![npm](https://img.shields.io/npm/dt/vue3-markdown-it)](https://www.npmjs.com/package/vue3-markdown-it)
 
 > A Vue 3 [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
+
+🔎 [Live Demo](https://janguillermo.github.io/vue3-markdown-it/)
+
+---
 
 ## Installation
 ```
@@ -24,7 +28,6 @@ npm install vue3-markdown-it
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
 - [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
-- [markdown-it-strikethrough-alt](https://github.com/jay-hodgson/markdown-it-strikethrough-alt) - Add strikethrough
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
 - [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) - Add task lists
@@ -108,6 +111,11 @@ Type: `Boolean` | Default value: `false`
 > CSS language prefix for fenced blocks. Can be useful for external highlighters.
 
 Type: `String` | Default value: `language-`
+
+### `linkify`
+> Autoconvert URL-like text to links
+
+Type: `Boolean` | Default value: `false`
 
 ### `quotes`
 > Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).
