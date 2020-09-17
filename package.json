@@ -1,6 +1,6 @@
 {
   "name": "vue3-markdown-it",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Jan Guillermo",
   "description": "A Vue markdown-it wrapper plugin",
   "license": "MIT",
