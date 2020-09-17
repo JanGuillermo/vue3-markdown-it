@@ -1,8 +1,8 @@
 {
   "name": "vue3-markdown-it",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Jan Guillermo",
-  "description": "A Vue markdown-it wrapper plugin",
+  "description": "An awesome Vue 3 markdown-it wrapper plugin that can even support external plugins!",
   "license": "MIT",
   "keywords": [
     "vue",
@@ -16,7 +16,7 @@
     "build": "vue-cli-service build --formats umd-min --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit",
-    "prepare": "npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "dependencies": {
     "markdown-it": "^11.0.0",
@@ -27,7 +27,6 @@
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-highlightjs": "^3.2.0",
     "markdown-it-ins": "^3.0.0",
-    "markdown-it-latex": "^0.2.0",
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
@@ -47,6 +46,8 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^4.3.0",
+    "markdown-it-strikethrough-alt": "^1.0.0",
     "prettier": "^2.1.1",
     "typescript": "^4.0.2",
     "vue": "^3.0.0-rc.11",
@@ -59,5 +60,11 @@
   },
   "bugs": {
     "url": "https://github.com/JanGuillermo/vue3-markdown-it/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test && npm run build"
+    }
   }
 }

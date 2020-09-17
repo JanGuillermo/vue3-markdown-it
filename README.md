@@ -6,7 +6,7 @@
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue3-markdown-it)](https://www.npmjs.com/package/vue3-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue3-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue3-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue3-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue3-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue3-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue3-markdown-it) [![Known Vulnerabilities](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it?targetFile=package.json) [![npm](https://img.shields.io/npm/dt/vue3-markdown-it)](https://www.npmjs.com/package/vue3-markdown-it)
 
-> A Vue 3 [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
+> An awesome Vue 3 [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin that can even support external plugins!
 
 🔎 [Live Demo](https://janguillermo.github.io/vue3-markdown-it/)
 
@@ -26,7 +26,6 @@ npm install vue3-markdown-it
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
 - [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) - Add highlighting for code blocks
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
-- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
@@ -45,11 +44,6 @@ app.use(VueMarkdownIt);
 ```
 
 ### CSS
-If you want to use LaTeX, you'll have to import a CSS file from [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex).
-```js
-import 'markdown-it-latex/dist/index.css';
-```
-
 If you want to use highlighting for code blocks, you'll have to import a CSS file from [highlight.js](https://github.com/highlightjs/highlight.js). View more styles [here](https://github.com/highlightjs/highlight.js/tree/master/src/styles). The code sample below imports the Monokai styling.
 ```js
 import 'highlight.js/styles/monokai.css';
@@ -116,6 +110,42 @@ Type: `String` | Default value: `language-`
 > Autoconvert URL-like text to links
 
 Type: `Boolean` | Default value: `false`
+
+### `plugins` 🌟
+> Don't see your favorite markdown-it plugin in the list of supported plugins? You can create an array of plugins and bind it into the component!
+> > The array only consists of objects (plugins in that case). A plugin has two properties:
+> > - `plugin`: A `markdown-it` plugin imported into this
+> > - `options`: Set the options for a specific `markdown-it` plugin.
+> ```vue
+> <template>
+>   <div>
+>     <vue3-markdown-it :source='source' :plugins='plugins' />
+>   </div>
+> </template>
+>
+> <script>
+> import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
+> import VueMarkdownIt from 'vue3-markdown-it';
+> 
+> export default {
+>   components: {
+>     VueMarkdownIt
+>   },
+>   data() {
+>     return {
+>       source: '--this is not so cool!--',
+>       plugins = [
+>         {
+>           plugin: MarkdownItStrikethroughAlt
+>         }
+>       ]
+>     }
+>   }
+> }
+> </script>
+> ```
+
+Type: `Array` | Default value: `[]`
 
 ### `quotes`
 > Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).

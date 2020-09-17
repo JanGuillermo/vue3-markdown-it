@@ -8,7 +8,6 @@ import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItFootnote from 'markdown-it-footnote';
 import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 import MarkdownItIns from 'markdown-it-ins';
-import MarkdownItLatex from 'markdown-it-latex';
 import MarkdownItMark from 'markdown-it-mark';
 import MarkdownItSub from 'markdown-it-sub';
 import MarkdownItSup from 'markdown-it-sup';
@@ -43,6 +42,10 @@ const props = {
   linkify: {
     type: Boolean,
     default: false
+  },
+  plugins: {
+    type: Array,
+    default: () => []
   },
   quotes: {
     type: String,
@@ -84,7 +87,6 @@ export default {
         .use(MarkdownItFootnote)
         .use(MarkdownItHighlightjs, props.highlight)
         .use(MarkdownItIns)
-        .use(MarkdownItLatex)
         .use(MarkdownItMark)
         .use(MarkdownItSub)
         .use(MarkdownItSup)
@@ -99,6 +101,10 @@ export default {
           typographer: props.typographer,
           xhtmlOut: props.xhtmlOut
         });
+
+      props.plugins.forEach(({ plugin, options = {} }) => {
+        markdown.use(plugin, options);
+      });
 
       md.value = markdown.render(props.source);
     };
