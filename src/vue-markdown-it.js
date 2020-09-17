@@ -44,6 +44,10 @@ const props = {
     type: Boolean,
     default: false
   },
+  plugins: {
+    type: Array | Object,
+    default: () => []
+  },
   quotes: {
     type: String,
     default: '“”‘’'
@@ -99,6 +103,10 @@ export default {
           typographer: props.typographer,
           xhtmlOut: props.xhtmlOut
         });
+
+      this.plugins.forEach(({ plugin, options = {} }) => {
+        markdown.use(plugin, options);
+      });
 
       md.value = markdown.render(props.source);
     };

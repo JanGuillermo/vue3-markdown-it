@@ -117,6 +117,11 @@ Type: `String` | Default value: `language-`
 
 Type: `Boolean` | Default value: `false`
 
+### `plugins` 🌟
+> Don't see your favorite markdown-it plugin in the list of supported plugins? You can create an array of plugins!
+
+Type: `Array` | Default value: `[]`
+
 ### `quotes`
 > Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).
 
