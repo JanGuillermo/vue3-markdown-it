@@ -40,6 +40,10 @@ const props = {
     type: String,
     default: 'language-'
   },
+  linkify: {
+    type: Boolean,
+    default: false
+  },
   quotes: {
     type: String,
     default: '“”‘’'
@@ -90,6 +94,7 @@ export default {
           breaks: props.breaks,
           html: props.html,
           langPrefix: props.langPrefix,
+          linkify: props.linkify,
           quotes: props.quotes,
           typographer: props.typographer,
           xhtmlOut: props.xhtmlOut

@@ -108,6 +108,11 @@ Type: `Boolean` | Default value: `false`
 
 Type: `String` | Default value: `language-`
 
+### `linkify`
+> Autoconvert URL-like text to links
+
+Type: `Boolean` | Default value: `false`
+
 ### `quotes`
 > Double + single quotes replacement pairs, when typographer enabled and smartquotes on. Could be either a String or an Array. *For example*, you can use `«»„“` for Russian, `„“‚‘` for German, and `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).
 
