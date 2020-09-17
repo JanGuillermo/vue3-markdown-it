@@ -19,7 +19,6 @@ So far, it supports the following plugins:
 - [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) - Add footnotes
 - [markdown-it-highlightjs](https://github.com/valeriangalliat/markdown-it-highlightjs) - Add highlighting for code blocks
 - [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins) - Add `<ins>` tags
-- [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex) - Add LaTeX formatting
 - [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) - Add marking/highlighting
 - [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) - Add subscript
 - [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) - Add superscript
@@ -74,9 +73,13 @@ Content in the first column | Content in the second column
 
 # Anyway, guess what?!
 
-It's time to show how every plugin works!
-
 ![pog](https://cdn.frankerfacez.com/emoticon/305343/4)
+
+We support plugging in external `markdown-it` plugins! [markdown-it-icons](https://github.com/tylingsoft/markdown-it-icons) was added as an external plugin. Let's test it out!
+
+A :fa-car: runs!
+
+# Ok, plugin showcase time!
 
 ## [markdown-it-abbr](https://github.com/markdown-it/markdown-it-abbr)
 
@@ -118,10 +121,6 @@ console.log("Hello World! This is JavaScript.");
 ## [markdown-it-ins](https://github.com/markdown-it/markdown-it-ins)
 
 ++this is inserted++
-
-## [markdown-it-latex](https://github.com/tylingsoft/markdown-it-latex)
-
-`$E = mc^2$`
 
 ## [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)
 
