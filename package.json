@@ -53,6 +53,7 @@
     "vue": "^3.0.0-rc.11",
     "vue-jest": "^5.0.0-0"
   },
+  "homepage": "https://janguillermo.github.io/vue3-markdown-it/",
   "repository": {
     "type": "git",
     "url": "https://github.com/JanGuillermo/vue3-markdown-it.git"
