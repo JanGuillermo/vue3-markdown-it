@@ -6,7 +6,7 @@
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/JanGuillermo/vue3-markdown-it)](https://www.npmjs.com/package/vue3-markdown-it) [![Build Status](https://travis-ci.com/JanGuillermo/vue3-markdown-it.svg?branch=master)](https://travis-ci.com/JanGuillermo/vue3-markdown-it) [![codecov](https://codecov.io/gh/JanGuillermo/vue3-markdown-it/branch/master/graph/badge.svg)](https://codecov.io/gh/JanGuillermo/vue3-markdown-it) [![Dependencies Status](https://david-dm.org/JanGuillermo/vue3-markdown-it.svg)](https://david-dm.org/JanGuillermo/vue3-markdown-it) [![Known Vulnerabilities](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JanGuillermo/vue3-markdown-it?targetFile=package.json) [![npm](https://img.shields.io/npm/dt/vue3-markdown-it)](https://www.npmjs.com/package/vue3-markdown-it)
 
-> A Vue 3 [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin.
+> An awesome Vue 3 [markdown-it](https://github.com/markdown-it/markdown-it) wrapper plugin with support for external plugins!
 
 🔎 [Live Demo](https://janguillermo.github.io/vue3-markdown-it/)
 
