@@ -15,7 +15,7 @@
     "markdown-it-icons": "^0.4.1",
     "tailwindcss": "^1.8.10",
     "vue": "^3.0.0-rc.11",
-    "vue3-markdown-it": "^1.0.4"
+    "vue3-markdown-it": "^1.0.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
