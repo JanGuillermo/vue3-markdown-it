@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.8] - 2021-04-02
+### Changed
+- Update dependencies
+
 ## [1.0.7] - 2020-12-11
 ### Changed
 - Update dependencies
@@ -69,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - [markdown-it-task-lists](https://github.com/revin/markdown-it-task-lists) - Add task lists
   - [markdown-it-toc-done-right](https://github.com/nagaozen/markdown-it-toc-done-right) - Add table of contents
 
+[1.0.8]: https://github.com/JanGuillermo/vue3-markdown-it/compare/v1.0.7...v1.0.8
 [1.0.7]: https://github.com/JanGuillermo/vue3-markdown-it/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/JanGuillermo/vue3-markdown-it/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/JanGuillermo/vue3-markdown-it/compare/v1.0.4...v1.0.5
