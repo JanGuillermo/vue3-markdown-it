@@ -36,11 +36,11 @@ npm install vue3-markdown-it
 ### Global Use
 ```js
 import { createApp } from 'vue';
-import VueMarkdownIt from 'vue3-markdown-it';
+import Markdown from 'vue3-markdown-it';
 
 const app = createApp();
 
-app.use(VueMarkdownIt);
+app.use(Markdown);
 ```
 
 ### CSS
@@ -53,16 +53,16 @@ import 'highlight.js/styles/monokai.css';
 ```vue
 <template>
   <div>
-    <vue3-markdown-it :source='source' />
+    <Markdown :source="source" />
   </div>
 </template>
 
 <script>
-import VueMarkdownIt from 'vue3-markdown-it';
+import Markdown from 'vue3-markdown-it';
 
 export default {
   components: {
-    VueMarkdownIt
+    Markdown
   },
   data() {
     return {
@@ -119,17 +119,17 @@ Type: `Boolean` | Default value: `false`
 > ```vue
 > <template>
 >   <div>
->     <vue3-markdown-it :source='source' :plugins='plugins' />
+>     <Markdown :source="source" :plugins="plugins" />
 >   </div>
 > </template>
 >
 > <script>
 > import MarkdownItStrikethroughAlt from 'markdown-it-strikethrough-alt';
-> import VueMarkdownIt from 'vue3-markdown-it';
+> import Markdown from 'vue3-markdown-it';
 > 
 > export default {
 >   components: {
->     VueMarkdownIt
+>     Markdown
 >   },
 >   data() {
 >     return {
