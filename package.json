@@ -11,7 +11,14 @@
     "markdown",
     "markdown-it"
   ],
+  "types": "types/vue3-markdown-it.d.ts",
   "main": "dist/vue3-markdown-it.umd.min.js",
+  "files": [
+    "dist/vue3-markdown-it.umd.min.js",
+    "dist/vue3-markdown-it.umd.min.js.map",
+    "types/vue3-markdown-it.d.ts",
+    "README.md"
+  ],
   "scripts": {
     "build": "vue-cli-service build --formats umd-min --target lib ./src/index.js",
     "lint": "vue-cli-service lint",
