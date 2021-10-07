@@ -1,4 +1,4 @@
-import type { App } from 'vue'
+import type { VNodeProps, App } from 'vue'
 import type { TocOptions } from 'markdown-it-toc-done-right';
 import type { AnchorOptions } from 'markdown-it-anchor';
 import type { Options as EmojiOptions } from 'markdown-it-emoji';
@@ -50,7 +50,7 @@ interface VueMarkdownItProps {
 }
 
 export declare const VueMarkdownIt: new () => {
-    $props: VueMarkdownItProps;
+    $props: VNodeProps & VueMarkdownItProps;
 };
 
 export function install(app: App)
