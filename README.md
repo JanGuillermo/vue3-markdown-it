@@ -1,3 +1,9 @@
+# Currently not being maintained.
+
+Please go to [vite-plugin-vue-markdown](https://github.com/mdit-vue/vite-plugin-vue-markdown) or find another alternative.
+
+---
+
 <p align="center">
   <img width="200" src="logo.png" alt="logo">
 </p>
